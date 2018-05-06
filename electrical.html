@@ -35,15 +35,15 @@
 									</header>
 
 									<h2>Overview</h2>
-									<p>The firmware for this project is split between three PIC microcontrollers and an Arduino. One microcontroller controls the start and stop conditions, the other two microcontrollers control the obstacles which are loosely split up between the right and left side, and the Arduino controls the joysticks, the two tilt mazes, and the countdown timer.</p>
-									<div class="12u"><span class="image fit"><img src="images/overview.jpg" alt="" /></span></div>
+									<p>We have a total of sixteen sensors, sixteen motors, three PIC microcontrollers, one Arduino, and two power supplies. A diagram of how everything fits together is below:</p>
+									<div class="14u"><span class="image fit"><img src="images/Final Schematic.jpg" alt="schematic" align="middle"/></span></div>
 										
 									<hr class="major" />
 
 									<h2>The Controls</h2>
 									<div class="row">
 										<div class="6u 12u$(small)">
-											<p>Our controls consist of one coin acceptor, six buttons, two potentiometers, one slide potentiometer, two joysticks, and four breakbeam sensors. The six buttons are all connected to pull down resistors, so the signal pin goes high when the putton is pressed. The six buttons control the start, the popper, the lever toss, the swishel swashel rotation, the swishel swashel popping mechanism and weeble wobble. The two potentiometers and the slide potentiometer output a voltage between 0V and 5V which is then used to control the postion of the two sides of the ball pass and the shoot the moon. The two joysticks communicate with the Arduino via I2C and are used to control the two tilt mazes. The four breakbeam sensors let us know when a ball has gotten to the end goal or when it has fallen into the ramp of failure. </p>
+											<p>Our controls consist of one coin acceptor, six buttons, two potentiometers, one slide potentiometer, two joysticks, and four break beam sensors. The six buttons are all connected to pull down resistors, so the signal pin goes high when the button is pressed. The six buttons control the start, the popper, the lever toss, the swishel swashel rotation, the swishel swashel popping mechanism and weeble wobble. The two potentiometers and the slide potentiometer output a voltage between 0V and 5V which is then used to control the position of the two sides of the ball pass and the shoot the moon. The two joysticks communicate with the Arduino via I2C and are used to control the two tilt mazes. The four break beam sensors let us know when a ball has gotten to the end goal or when it has fallen into the ramp of failure. </p>
 										</div>
 										<div class="6u 12u$(small)">	
 											<div class="12u"><span class="image fit"><img src="images/controls.jpg" alt="" /></span></div>
@@ -87,7 +87,7 @@
 										
 										<div class="6u 12u$(small)">
 											<p>Powering this entire system created a large challenge. All of the servos and micrcontrollers had to run off of 5V, the coin acceptor had to run off of 12V, and the solenoids had to run off of anywhere from 12V to 36V. We could not find a single power supply that could supply enough current at those 5V, 12V, and 36V, so we decided to split up our power circuitry into two power supplies: one that can supply 5V and 12V, and one that can supply 36V. The servos, microcontrollers, Neopixels, and Arudino are all powered from the 5V supply, the coin acceptor is powered from the 12V supply, and the solenoids are all powered from the 36V supply. In total with all of our devices, we needed about 5.8 Amps at 5V, 0.5 Amps at 12V, and about 3.2 Amps at 36V. </p>
-											<p>The two power supplies attach to a power port via screw terminals and splay connectors, and from there, the box is directly plugged into a wall outlet. Each solenoid has its own 16 gauge connection to the 36V power supply. There are 16 gauge two cables running from the 5V supply which then each connect to multiple 24 gauge wires to power everything that needs 5V. The coin acceptor has its own 24 gauage cables running directly from the 12V supply. The grounds of all of the supplies are connected to ensure voltage levels. </p>
+											<p>The two power supplies attach to a power port via screw terminals and splay connectors, and from there, the box is directly plugged into a wall outlet. Each solenoid has its own 16 gauge connection to the 36V power supply. There are 16 gauge two cables running from the 5V supply which then each connect to multiple 24 gauge wires to power everything that needs 5V. The coin acceptor has its own 24 gauge cables running directly from the 12V supply. The grounds of all of the supplies are connected to ensure voltage levels. </p>
 										</div>
 										<div class="6u 12u$(small)">
 											<div class="12u"><span class="image fit"><img src="images/powerSupply.jpg" alt="" /></span></div>	
